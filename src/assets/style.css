@@ -22,7 +22,7 @@ input {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #cdcdcd;
+  background-color: #F5F1EB;
 }
 
 .container-name-lastname, .container-address {
@@ -45,8 +45,14 @@ button {
   font-size: 1.1rem;
   transition: 0.1s ease-in;
   border-radius: 5px;
+  background-color: #242424;
+  color: white;
 }
 
 button:hover {
   transform: scale(1.05);
+}
+
+.showError {
+  color: red;
 }/*# sourceMappingURL=style.css.map */

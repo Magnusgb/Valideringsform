@@ -7,9 +7,13 @@ const lastname = ref('');
 const mail = ref('');
 const address = ref('');
 const zipcode = ref('');
+const showError = ref(false);
+
+const updateError = () => {
+    showError.value = data.value === '';
+};
 
 const formdata = () => {
-
 
 const data = {
     "Navn": name.value,
@@ -31,10 +35,13 @@ const data = {
     })
     .then(() => {
     console.log(data)
+    updateError();
 })
 .catch(error => {
     console.log('Der er opstået en fejl', error)
+
 });
+
 }
 
 </script>
@@ -48,24 +55,34 @@ const data = {
                 <div class="container-name span">
                 <h4>Indtast dit fornavn</h4>
                 <input type="text" v-model="name">
+                <p v-if="showError" class="showError">Udfyld venligst dette felt</p>
+
             </div>
             <div class="container-lastname span">
                 <h4>Indtast dit efternavn</h4>
                 <input type="text" v-model="lastname">
+                <p v-if="showError" class="showError">Udfyld venligst dette felt</p>
+
             </div>
         </div>
             <div class="container-mail span">
                 <h4>Indtast din e-mail (Påkrævet)</h4>
                 <input type="email" v-model="mail">
+                <p v-if="showError" class="showError">Udfyld venligst dette felt</p>
+
             </div>
             <div class="container-name-lastname">
                 <div class="container-name span">
                 <h4>Adresse</h4>
                 <input type="text" v-model="address">
+                <p v-if="showError" class="showError">Udfyld venligst dette felt</p>
+
             </div>
             <div class="container-lastname span">
                 <h4>Postnummer</h4>
-                <input type="text" v-model="zipcode">
+                <input type="number" v-model="zipcode">
+                <p v-if="showError" class="showError">Udfyld venligst dette felt</p>
+
             </div>
         </div>
             <button @click="formdata">Send til database</button>
