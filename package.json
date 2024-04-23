@@ -10,6 +10,7 @@
     "deply": "npm run build && firebase deploy"
   },
   "dependencies": {
+    "sass": "^1.75.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
