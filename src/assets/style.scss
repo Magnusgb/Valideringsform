@@ -1,0 +1,51 @@
+* {
+margin: 0;
+padding:0;
+box-sizing: border-box;
+}
+
+.wrapper-heading {
+   display: grid;
+   place-content: center;
+}
+
+input {
+    width: 300px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+.wrapper {
+    display: grid;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh;
+    background-color: #cdcdcd;
+}
+
+.container-name-lastname, .container-address {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.container-mail input {
+    width: 100%; /* Fylder bredden af containeren */
+}
+
+.span h4 {
+    margin-bottom: 10px;
+}
+
+button {
+    border: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    transition: .1s ease-in;
+    border-radius: 5px;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
