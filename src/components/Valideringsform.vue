@@ -8,10 +8,13 @@ const mail = ref('');
 const address = ref('');
 const zipcode = ref('');
 const showError = ref(false);
+const input = ref ('');
 
-const updateError = () => {
-    showError.value = data.value === '';
+const updateErrorName = () => {
+    showError.value = input.value == '';
 };
+
+
 
 const formdata = () => {
 
@@ -35,15 +38,13 @@ const data = {
     })
     .then(() => {
     console.log(data)
-    updateError();
+    updateErrorName();
 })
 .catch(error => {
     console.log('Der er opstået en fejl', error)
 
 });
-
 }
-
 </script>
 <template>
     <main>
@@ -69,20 +70,17 @@ const data = {
                 <h4>Indtast din e-mail (Påkrævet)</h4>
                 <input type="email" v-model="mail">
                 <p v-if="showError" class="showError">Udfyld venligst dette felt</p>
-
             </div>
             <div class="container-name-lastname">
                 <div class="container-name span">
                 <h4>Adresse</h4>
                 <input type="text" v-model="address">
                 <p v-if="showError" class="showError">Udfyld venligst dette felt</p>
-
             </div>
             <div class="container-lastname span">
                 <h4>Postnummer</h4>
                 <input type="number" v-model="zipcode">
                 <p v-if="showError" class="showError">Udfyld venligst dette felt</p>
-
             </div>
         </div>
             <button @click="formdata">Send til database</button>
